@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Task(models.model):
+class Task(models.Model):
   title = models.TextField(blank = True)
   description = models.TextField(blank = True)
   completed = models.BooleanField(default = False)
