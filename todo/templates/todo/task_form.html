@@ -2,9 +2,9 @@
 {% block content%}
 
 <h2>{% if task %}Edit Task{% else %}Add {% endif %} Task</h2>
-{% if error %}<div class = 'alert alert-danger'>{{error}}</div>
+{% if error %}<div class = 'alert alert-danger'>{{error}}</div>{% endif %}
 <form method = "post">
-  {% crsf_token%}
+  {% csrf_token%}
   <div class = "mb-3">
     <lebel class = "form-label">Title</lebel>
     <input type = "text" name = "title" class = "form-control" value = "{{ task.title}}">

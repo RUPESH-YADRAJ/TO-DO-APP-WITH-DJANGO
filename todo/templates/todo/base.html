@@ -9,13 +9,13 @@
 <body>
   <nav class = "navbar navbar-light bg-light mb-4">
     <div class="container">
-      <a class="navbar-brand" href="{%url 'todo:task_list'}" >TODO App</a>
-      <a class="btn btn-primary" href="{%url 'todo:task_create'}" >Add Task</a>
+      <a class="navbar-brand" href="{% url 'todo:task_list' %}" >TODO App</a>
+      <a class="btn btn-primary" href="{% url 'todo:task_create' %}" >Add Task</a>
     </div>
   </nav>
   <div class="container">
     {% block content %}
-    {% end block%}
+    {% endblock%}
   </div>
 </body>
 </html>

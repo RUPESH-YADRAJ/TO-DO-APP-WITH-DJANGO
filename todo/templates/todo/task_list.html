@@ -16,7 +16,7 @@
       <td>{{ task.title }}</td>
       <td>{{ task.description }}</td>
       <td>
-        <form action="post" action = "{% url 'todo:task_toggle' task.pk %}" style="display: inline;">
+        <form method="post" action = "{% url 'todo:task_toggle_complete' task.pk %}" style="display: inline;">
           {% csrf_token %}
           <button type="submit" class = 'btn btn-sm {% if task.completed %}btn-success{% else %}btn-secondary{% endif %}'>
           {% if task.comleted %} Done {% else %} Mark {% endif %}
@@ -27,7 +27,7 @@
         {{ task.created_at|date:"M d, Y:i"}}
       </td>
       <td>
-        <a class="btn btn-sm btn-warning" href = "{% url 'todo:task_edit' task.pk %}">Edit</a>
+        <a class="btn btn-sm btn-warning" href = "{% url 'todo:task_update' task.pk %}">Edit</a>
         <a class="btn btn-sm btn-danger" href = "{% url 'todo:task_delete' task.pk %}">Delete</a>
       </td>
     </tr>
